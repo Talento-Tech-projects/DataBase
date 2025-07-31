@@ -1,17 +1,17 @@
-CREATE TABLE user (
+CREATE TABLE "user" (
     id SERIAL PRIMARY KEY,
     user_name VARCHAR(20),
     user_password VARCHAR(30),
-    email VARCHAR(20),
-    numer INTEGER
+    email VARCHAR(50),
+    phone_number INTEGER
 );
 
 CREATE TABLE beam (
     id SERIAL PRIMARY KEY,
     beam_length DOUBLE PRECISION NOT NULL,
-    E DOUBLE PRECISION NOT NULL,
-    I DOUBLE PRECISION NOT NULL,
-    user_id INTEGER NOT NULL REFERENCES user(id) ON DELETE CASCADE
+    elastic_modulus DOUBLE PRECISION NOT NULL,
+    moment_of_inertia DOUBLE PRECISION NOT NULL,
+    user_id INTEGER NOT NULL REFERENCES "user"(id) ON DELETE CASCADE
 );
 
 CREATE TABLE support (
