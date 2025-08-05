@@ -1,0 +1,31 @@
+
+docker compose up -d     
+docker compose -p mi_proyecto up -d
+docker compose -p db up -d
+
+
+
+docker build -t mi-imagen .
+docker build -t my-image .
+
+
+
+docker run -e POSTGRES_PASSWORD=example mi-imagen
+docker run --name my-container my-image
+docker run --name my-app -e DB_PASSWORD=example -e DB_HOST=10.1.0.2 -e DB_PORT=5433  my-image
+docker run --name my-app -e DB_PASSWORD=example -e DB_HOST=10.1.5.147 -e DB_PORT=5433  my-image
+
+docker start -a my-app
+
+
+--new
+
+docker compose build
+
+docker compose up -d
+
+docker compose run my-app
+
+
+
+
